@@ -18,8 +18,15 @@ function App() {
     setCart([...cart, item]);
   };
 
-  const removeItem = id => {
-    setCart(cart.filter(item => item.id !== id));
+  const removeItem = idx => {
+    // let matchingItems = cart.filter(item => item.id === id);
+    // let nonmatchingItems = cart.filter(item => item.id !== id);
+
+    // matchingItems.pop();
+    // [...matchingItems, ...nonmatchingItems]
+    const updatedCart = [...cart];
+    updatedCart.splice(idx, 1);
+    setCart(updatedCart);
   };
 
   return (
